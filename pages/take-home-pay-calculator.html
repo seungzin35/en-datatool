@@ -1,0 +1,93 @@
+<!--meta
+{"title": "Korea Take-Home Pay Calculator 2026 (Net Salary After Tax)",
+ "description": "Estimate your net monthly salary in Korea for 2026. See National Pension, health insurance, long-term care, employment insurance and income tax deductions in English.",
+ "tool": "Korea Take-Home Pay Calculator",
+ "script": "salary.js"}
+-->
+<h1>Korea take-home pay calculator (2026)</h1>
+<p class="lead">Enter your salary to estimate what lands in your bank account each month after the four social insurances and income tax. Rates are for 2026.</p>
+
+<div class="card">
+  <div class="row">
+    <div class="field">
+      <label for="period">Salary is</label>
+      <select id="period">
+        <option value="year" selected>Per year (연봉)</option>
+        <option value="month">Per month (월급)</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="amount">Gross salary (won)</label>
+      <input id="amount" type="text" inputmode="numeric" autocomplete="off" value="40,000,000">
+      <div class="hint" id="amount-hint">You can also type 4000만.</div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="field">
+      <label for="nontax">Tax-free allowance per month</label>
+      <input id="nontax" type="text" inputmode="numeric" autocomplete="off" value="200,000">
+      <div class="hint">For example a meal allowance (up to ₩200,000/month is tax-free). Use 0 if you don't have one.</div>
+    </div>
+    <div class="field">
+      <label for="deps">People you support, including yourself</label>
+      <select id="deps">
+        <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option>
+      </select>
+      <div class="hint">Only family members with little or no income count.</div>
+    </div>
+  </div>
+  <div class="field">
+    <label class="check"><input type="checkbox" id="no-pension"> I don't pay National Pension (some nationalities and visas are exempt)</label>
+    <label class="check"><input type="checkbox" id="no-ei"> I don't pay Employment Insurance (optional for many visa types)</label>
+  </div>
+
+  <div class="result" aria-live="polite">
+    <div class="sub">Estimated take-home pay per month</div>
+    <div class="big" id="net">—</div>
+    <div class="sub" id="net-year">—</div>
+  </div>
+
+  <div class="table-wrap" style="margin-top:12px">
+    <table>
+      <thead><tr><th>Item</th><th>Rate (your share)</th><th class="num">Per month</th></tr></thead>
+      <tbody id="rows"></tbody>
+    </table>
+  </div>
+</div>
+
+<div class="note">This is an estimate. Your employer withholds income tax using the National Tax Service's official table, which can differ by a few thousand won a month. Any difference is settled in the year-end tax settlement (<span class="kr">연말정산</span>) the following January–February.</div>
+
+<h2>What gets deducted from a Korean salary</h2>
+<p>Korean payslips (<span class="kr">급여명세서</span>) usually show six deductions. Four are social insurance (<span class="kr">4대보험</span>) and two are taxes.</p>
+<div class="card table-wrap">
+  <table>
+    <thead><tr><th>Deduction</th><th>Korean</th><th>Employee share (2026)</th></tr></thead>
+    <tbody>
+      <tr><td>National Pension</td><td class="kr">국민연금</td><td>4.75% (total 9.5%)</td></tr>
+      <tr><td>National Health Insurance</td><td class="kr">건강보험</td><td>3.595% (total 7.19%)</td></tr>
+      <tr><td>Long-term Care Insurance</td><td class="kr">장기요양보험</td><td>about 13.14% of your health insurance premium</td></tr>
+      <tr><td>Employment Insurance</td><td class="kr">고용보험</td><td>0.9% (total 1.8%)</td></tr>
+      <tr><td>Income tax</td><td class="kr">소득세</td><td>progressive, 6%–45% of taxable income</td></tr>
+      <tr><td>Local income tax</td><td class="kr">지방소득세</td><td>10% of your income tax</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>Your employer pays the same amount again for pension, health, long-term care and employment insurance, plus all of the industrial accident insurance (<span class="kr">산재보험</span>). Those employer payments do not come out of your salary.</p>
+
+<h2>How this calculator works</h2>
+<ul>
+  <li><strong>Insurance base:</strong> monthly salary minus tax-free allowances.</li>
+  <li><strong>National Pension</strong> is 4.75% of that base, but the base is capped. From July 2026 to June 2027 the base is at least ₩410,000 and at most ₩6,590,000 a month, so the most you pay is ₩313,020.</li>
+  <li><strong>Long-term care</strong> = health insurance premium × 0.9448 ÷ 7.19.</li>
+  <li>Amounts under 10 won are dropped, as on real payslips.</li>
+  <li><strong>Income tax</strong> is worked out for the whole year: earned income deduction, ₩1,500,000 per person you support, your pension and insurance premiums, the 2026 tax brackets, the earned income tax credit and the ₩130,000 standard tax credit. The result is divided by 12. Child tax credits and other personal deductions are not included.</li>
+</ul>
+
+<h2>Notes for foreign workers</h2>
+<ul>
+  <li><strong>National Pension:</strong> whether you pay depends on your country's agreement with Korea and your visa. Some people can claim a lump-sum refund (<span class="kr">반환일시금</span>) when they leave Korea. Check with the National Pension Service.</li>
+  <li><strong>Employment Insurance:</strong> mandatory for some visas (for example F-2, F-5, F-6, E-9) and optional for many others.</li>
+  <li><strong>Flat tax option:</strong> some foreign employees can choose a flat income tax rate instead of the regular progressive rate. This calculator uses the regular rate. Ask your employer if the flat rate applies to you.</li>
+</ul>
+<p class="hint">Sources: 2026 contribution rates from the Ministry of Health and Welfare, the National Pension Service and the 4 Social Insurance Information Center (4insure.or.kr). Income tax brackets from the Income Tax Act. Last checked November 2026.</p>
+<p>New to Korean numbers? Use the <a href="/man-eok-converter/">Man/Eok converter</a> to read salaries like <span class="kr">연봉 4천</span>.</p>

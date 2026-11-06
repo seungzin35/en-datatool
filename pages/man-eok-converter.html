@@ -1,0 +1,70 @@
+<!--meta
+{"title": "Man & Eok Converter – Korean Numbers (만, 억) to English and USD",
+ "description": "Convert Korean numbers like 3억 5천만 원 or 50만 원 into digits, English words and US dollars. Free man (만) and eok (억) converter with a live exchange rate.",
+ "tool": "Man & Eok Converter",
+ "script": "man-eok.js"}
+-->
+<h1>Man &amp; Eok converter</h1>
+<p class="lead">Type a Korean amount such as <span class="kr">3억 5천만</span>, <span class="kr">50만</span> or <span class="kr">2.5억</span>, or type a plain number. You'll see it in digits, English words and US dollars.</p>
+
+<div class="card">
+  <div class="field">
+    <label for="krw">Korean amount (won)</label>
+    <input id="krw" type="text" inputmode="text" autocomplete="off" value="3억 5천만" placeholder="e.g. 1억 2천만, 50만, 350000000">
+    <div class="hint">You can write <span class="kr">만</span>/<span class="kr">억</span>/<span class="kr">조</span> or man / eok / jo. Commas and “원” are fine.</div>
+    <div class="chips" id="chips">
+      <button class="chip kr" type="button" data-v="1만">1만</button>
+      <button class="chip kr" type="button" data-v="10만">10만</button>
+      <button class="chip kr" type="button" data-v="100만">100만</button>
+      <button class="chip kr" type="button" data-v="1000만">1000만</button>
+      <button class="chip kr" type="button" data-v="1억">1억</button>
+      <button class="chip kr" type="button" data-v="10억">10억</button>
+    </div>
+  </div>
+  <div class="result" aria-live="polite">
+    <div class="big" id="out-digits">—</div>
+    <div id="out-words">—</div>
+    <div class="sub kr" id="out-korean">—</div>
+  </div>
+
+  <div class="row" style="margin-top:16px">
+    <div class="field">
+      <label for="usd">US dollars</label>
+      <input id="usd" type="text" inputmode="decimal" autocomplete="off" placeholder="e.g. 2500">
+    </div>
+    <div class="field">
+      <label for="rate">Exchange rate (₩ per $1)</label>
+      <input id="rate" type="number" inputmode="decimal" min="1" step="0.01" value="1450">
+      <div class="hint" id="rate-note">Loading today's rate…</div>
+    </div>
+  </div>
+</div>
+
+<h2>How Korean numbers work</h2>
+<p>English groups digits in threes (thousand, million, billion). Korean groups them in <strong>fours</strong>. The key units are <span class="kr">만</span> (man, 10,000), <span class="kr">억</span> (eok, 100,000,000) and <span class="kr">조</span> (jo, 1,000,000,000,000). Smaller words <span class="kr">천</span> (cheon, 1,000), <span class="kr">백</span> (baek, 100) and <span class="kr">십</span> (sip, 10) are used inside each group.</p>
+<p>So <span class="kr">3억 5천만 원</span> means 3 × 100,000,000 + 5,000 × 10,000 = <strong>350,000,000 won</strong>, or 350 million won.</p>
+
+<div class="card table-wrap">
+  <table>
+    <thead><tr><th>Korean</th><th>Romanized</th><th class="num">Number</th><th>English</th></tr></thead>
+    <tbody>
+      <tr><td class="kr">만</td><td>man</td><td class="num">10,000</td><td>ten thousand</td></tr>
+      <tr><td class="kr">10만</td><td>sim-man</td><td class="num">100,000</td><td>one hundred thousand</td></tr>
+      <tr><td class="kr">100만</td><td>baeng-man</td><td class="num">1,000,000</td><td>one million</td></tr>
+      <tr><td class="kr">1000만</td><td>cheon-man</td><td class="num">10,000,000</td><td>ten million</td></tr>
+      <tr><td class="kr">1억</td><td>il-eok</td><td class="num">100,000,000</td><td>one hundred million</td></tr>
+      <tr><td class="kr">10억</td><td>sip-eok</td><td class="num">1,000,000,000</td><td>one billion</td></tr>
+      <tr><td class="kr">1조</td><td>il-jo</td><td class="num">1,000,000,000,000</td><td>one trillion</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>Where you will see these numbers</h2>
+<ul>
+  <li><strong>Rent:</strong> a listing like <span class="kr">보증금 1000 / 월세 50</span> usually means a 10,000,000 won deposit and 500,000 won monthly rent. Real-estate sites often leave out <span class="kr">만</span>, so the numbers are in units of 10,000 won.</li>
+  <li><strong>Jeonse:</strong> lump-sum deposits are usually written in <span class="kr">억</span>, such as <span class="kr">2억 5천</span> (250,000,000 won).</li>
+  <li><strong>Salaries:</strong> annual pay is often said as <span class="kr">연봉 3천</span> or <span class="kr">3,500만 원</span> (35,000,000 won a year). Try the <a href="/take-home-pay-calculator/">take-home pay calculator</a> to see the monthly amount.</li>
+</ul>
+
+<h2>About the exchange rate</h2>
+<p>The dollar amount uses a reference rate loaded from ExchangeRate-API when the page opens. Banks and card companies add their own margin, so the rate you actually get will be a little different. You can type your own rate in the box above.</p>

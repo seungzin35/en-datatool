@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://en-datatool.zinnote.kr/sitemap.xml

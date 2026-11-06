@@ -1,0 +1,64 @@
+:root {
+  --bg: #f6f8fb; --card: #ffffff; --ink: #14213d; --muted: #5b6577; --line: #dde3ec;
+  --brand: #1f5eff; --brand-ink: #ffffff; --accent: #0f9d76; --soft: #eaf1ff; --warn: #fff6e0;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0e1422; --card: #161e30; --ink: #e8edf6; --muted: #9aa6bb; --line: #2a3550;
+    --brand: #6c96ff; --brand-ink: #0e1422; --accent: #3fd3a6; --soft: #1c2944; --warn: #2e2814;
+    color-scheme: dark;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif; }
+a { color: var(--brand); }
+.wrap { max-width: 860px; margin: 0 auto; padding: 0 16px; }
+.site-header { background: var(--card); border-bottom: 1px solid var(--line); }
+.site-header .wrap { display: flex; flex-wrap: wrap; gap: 8px 20px; align-items: center; justify-content: space-between; padding-top: 12px; padding-bottom: 12px; }
+.brand { font-weight: 700; color: var(--ink); text-decoration: none; display: flex; align-items: center; gap: 8px; }
+.logo { display: inline-grid; place-items: center; width: 30px; height: 30px; border-radius: 8px; background: var(--brand); color: var(--brand-ink); font-weight: 800; }
+nav { display: flex; gap: 14px; flex-wrap: wrap; }
+nav a { color: var(--muted); text-decoration: none; font-size: 15px; }
+nav a:hover { color: var(--brand); }
+main { padding-top: 24px; padding-bottom: 40px; }
+h1 { font-size: 1.75rem; line-height: 1.25; margin: 8px 0 8px; }
+h2 { font-size: 1.25rem; margin: 32px 0 8px; }
+h3 { font-size: 1.05rem; margin: 20px 0 6px; }
+.lead { color: var(--muted); margin-top: 0; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 20px; margin: 16px 0; }
+.grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+.tool-card { display: block; text-decoration: none; color: var(--ink); background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 18px; transition: border-color .15s, transform .15s; }
+.tool-card:hover { border-color: var(--brand); transform: translateY(-2px); }
+.tool-card h2 { margin: 6px 0 4px; font-size: 1.1rem; }
+.tool-card p { margin: 0; color: var(--muted); font-size: 15px; }
+.tag { display: inline-block; font-size: 12px; font-weight: 600; color: var(--brand); background: var(--soft); padding: 2px 8px; border-radius: 99px; }
+.tag.soon { color: var(--muted); }
+label { display: block; font-weight: 600; font-size: 14px; margin-bottom: 4px; }
+.field { margin-bottom: 14px; }
+.hint { font-size: 13px; color: var(--muted); margin-top: 4px; }
+input[type=text], input[type=number], select {
+  width: 100%; font: inherit; font-size: 17px; padding: 10px 12px; border-radius: 10px;
+  border: 1px solid var(--line); background: var(--bg); color: var(--ink);
+}
+input:focus, select:focus { outline: 2px solid var(--brand); outline-offset: 1px; }
+.check { display: flex; gap: 8px; align-items: flex-start; font-weight: 400; font-size: 15px; }
+.check input { margin-top: 5px; }
+.row { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); }
+.result { background: var(--soft); border-radius: 12px; padding: 16px; margin-top: 8px; }
+.big { font-size: 1.6rem; font-weight: 800; line-height: 1.2; word-break: break-word; }
+.sub { color: var(--muted); font-size: 15px; }
+table { width: 100%; border-collapse: collapse; font-size: 15px; }
+th, td { text-align: left; padding: 8px 6px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-size: 13px; color: var(--muted); font-weight: 600; }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+tr.total td { font-weight: 800; border-top: 2px solid var(--ink); }
+.table-wrap { overflow-x: auto; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+.chip { font: inherit; font-size: 14px; border: 1px solid var(--line); background: var(--card); color: var(--ink); border-radius: 99px; padding: 4px 12px; cursor: pointer; }
+.chip:hover { border-color: var(--brand); }
+.note { background: var(--warn); border-radius: 10px; padding: 12px 14px; font-size: 14px; }
+.kr { font-family: "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", sans-serif; }
+.site-footer { border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; padding: 20px 0 32px; }
+.site-footer p { margin: 4px 0; }

@@ -1,0 +1,67 @@
+<!--meta
+{"title": "Pyeong to Square Meters Converter (평 ↔ m² ↔ ft²)",
+ "description": "Convert Korean pyeong (평) to square meters and square feet, and back. Learn what 25평 and 34평 apartments mean and the difference between exclusive and supply area.",
+ "tool": "Pyeong to Square Meters Converter",
+ "script": "pyeong.js"}
+-->
+<h1>Pyeong ↔ square meters converter</h1>
+<p class="lead">Koreans still describe homes in <span class="kr">평</span> (pyeong). Type a number in any box and the others update.</p>
+
+<div class="card">
+  <div class="row">
+    <div class="field">
+      <label for="py">Pyeong (<span class="kr">평</span>)</label>
+      <input id="py" type="number" inputmode="decimal" min="0" step="any" value="34">
+    </div>
+    <div class="field">
+      <label for="m2">Square meters (m²)</label>
+      <input id="m2" type="number" inputmode="decimal" min="0" step="any">
+    </div>
+    <div class="field">
+      <label for="ft2">Square feet (ft²)</label>
+      <input id="ft2" type="number" inputmode="decimal" min="0" step="any">
+    </div>
+  </div>
+  <div class="result" aria-live="polite"><div class="big" id="summary">—</div></div>
+  <div class="chips" id="chips">
+    <button class="chip" type="button" data-py="10">10 pyeong</button>
+    <button class="chip" type="button" data-py="18">18 pyeong</button>
+    <button class="chip" type="button" data-py="25">25 pyeong</button>
+    <button class="chip" type="button" data-py="34">34 pyeong</button>
+    <button class="chip" type="button" data-m2="59">59 m²</button>
+    <button class="chip" type="button" data-m2="84">84 m²</button>
+  </div>
+</div>
+
+<h2>How big is one pyeong?</h2>
+<p>One pyeong is exactly <strong>400/121 m² ≈ 3.3058 m²</strong>, or about <strong>35.58 ft²</strong>. It comes from an old unit equal to a square 6 <em>cheok</em> on each side (about 1.82 m × 1.82 m), roughly the size of two tatami mats.</p>
+<p>Quick mental math: <strong>pyeong × 3.3 ≈ m²</strong>, and <strong>m² × 0.3 ≈ pyeong</strong>.</p>
+<p>Since 2007, contracts and official listings in Korea must use square meters, but people, ads and real-estate agents still talk in pyeong every day.</p>
+
+<h2>Exclusive area vs. supply area</h2>
+<p>This is the part that confuses most newcomers. Korean apartments have two main sizes:</p>
+<ul>
+  <li><strong>Exclusive area (<span class="kr">전용면적</span>):</strong> the space inside your unit that only you use: rooms, kitchen, bathrooms. Balconies that were extended are usually not included.</li>
+  <li><strong>Supply area (<span class="kr">공급면적</span>):</strong> exclusive area plus your share of shared spaces such as hallways, stairs and elevators.</li>
+</ul>
+<p>When someone says “a 34평 apartment” (<span class="kr">34평형</span>), they usually mean the <em>supply</em> area. The exclusive area of that apartment is typically about 84 m² (about 25.4 pyeong). So the space you actually live in is smaller than the pyeong number suggests.</p>
+
+<div class="card table-wrap">
+  <table>
+    <thead><tr><th>What people say</th><th class="num">Exclusive area</th><th class="num">= pyeong</th><th>Typical layout</th></tr></thead>
+    <tbody>
+      <tr><td>“Studio / one-room”</td><td class="num">20–33 m²</td><td class="num">6–10</td><td>1 room, open kitchen</td></tr>
+      <tr><td><span class="kr">24평형 · 25평형</span></td><td class="num">59 m²</td><td class="num">17.8</td><td>2–3 bedrooms, 1–2 baths</td></tr>
+      <tr><td><span class="kr">32평형 · 34평형</span></td><td class="num">84 m²</td><td class="num">25.4</td><td>3 bedrooms, 2 baths</td></tr>
+      <tr><td><span class="kr">40평형대</span></td><td class="num">about 114 m²</td><td class="num">34.5</td><td>4 bedrooms, 2 baths</td></tr>
+    </tbody>
+  </table>
+</div>
+<p class="hint">Supply area for the same exclusive size varies by building, so treat the “What people say” column as a rough guide. Always check the m² figures in the listing or contract.</p>
+
+<h2>Tips when you look at a listing</h2>
+<ul>
+  <li>Look for <span class="kr">전용</span> next to a number in m²: that is the size you actually live in.</li>
+  <li>For one-rooms and officetels, the exclusive area is often much smaller than the supply area, because shared spaces take a bigger share.</li>
+  <li>Prices are often compared per pyeong (<span class="kr">평당</span>). Use the <a href="/man-eok-converter/">Man/Eok converter</a> to read prices like <span class="kr">평당 4천만 원</span>.</li>
+</ul>
