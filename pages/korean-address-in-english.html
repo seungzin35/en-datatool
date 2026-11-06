@@ -1,0 +1,70 @@
+<!--meta
+{"title": "Korean Address in English – Free Address Converter",
+ "description": "Convert a Korean road-name or lot-number address from Hangul into English order and spelling for forms, parcels and online shopping. Includes apartment dong and ho.",
+ "tool": "Korean Address to English Converter",
+ "script": ["romanize.js", "address.js"]}
+-->
+<h1>Korean address in English</h1>
+<p class="lead">Paste a Korean address in Hangul. You'll get it in English order and spelling, ready for an overseas order form, a visa application or a parcel.</p>
+
+<div class="card">
+  <div class="field">
+    <label for="addr">Korean address</label>
+    <input id="addr" type="text" lang="ko" class="kr" autocomplete="off" value="서울특별시 관악구 신림로23길 16 101동 202호" placeholder="e.g. 서울특별시 종로구 세종대로 209">
+    <div class="chips">
+      <button class="chip kr" type="button" data-addr="서울특별시 종로구 세종대로 209">세종대로 209</button>
+      <button class="chip kr" type="button" data-addr="경기도 성남시 분당구 판교역로 166">판교역로 166</button>
+      <button class="chip kr" type="button" data-addr="부산광역시 해운대구 해운대해변로 264">해운대해변로 264</button>
+      <button class="chip kr" type="button" data-addr="[06236] 서울특별시 강남구 역삼동 737">역삼동 737 (lot number)</button>
+    </div>
+  </div>
+  <div class="result" aria-live="polite">
+    <div class="sub">English address</div>
+    <div class="big" id="out" style="font-size:1.25rem">—</div>
+    <div style="margin-top:10px"><button class="chip" type="button" id="copy">Copy</button></div>
+  </div>
+  <p class="hint">Building and apartment names are spelled out letter by letter. If the building has its own English name (for example on its website), use that instead. Notes in brackets, such as <span class="kr">(역삼동)</span>, are left out.</p>
+</div>
+
+<div class="note">Always double-check with the official English address on <a href="https://www.juso.go.kr/eng/">juso.go.kr (Korea Address Information)</a>. Korean mail is sorted by the 5-digit postal code, so include it whenever you can.</div>
+
+<h2>How Korean addresses are written in English</h2>
+<p>Korean addresses go from the biggest area to the smallest. In English the order is reversed, from the smallest to the biggest, just like a Western address.</p>
+<div class="card table-wrap">
+  <table>
+    <thead><tr><th>Korean order</th><th>English order</th></tr></thead>
+    <tbody>
+      <tr><td class="kr">서울특별시 관악구 신림로23길 16, 101동 202호</td><td>202-ho, 101-dong, 16 Sillim-ro 23-gil, Gwanak-gu, Seoul</td></tr>
+      <tr><td>Province/City → District → Road → Building number → Unit</td><td>Unit → Building number + Road → District → City/Province</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>Common address words</h2>
+<div class="card table-wrap">
+  <table>
+    <thead><tr><th>Korean</th><th>English</th><th>Meaning</th></tr></thead>
+    <tbody>
+      <tr><td class="kr">도</td><td>-do</td><td>Province, e.g. Gyeonggi-do</td></tr>
+      <tr><td class="kr">시</td><td>-si</td><td>City, e.g. Suwon-si (Seoul and the big metropolitan cities drop it)</td></tr>
+      <tr><td class="kr">구 / 군</td><td>-gu / -gun</td><td>District / county</td></tr>
+      <tr><td class="kr">읍 / 면 / 동 / 리</td><td>-eup / -myeon / -dong / -ri</td><td>Town, township, neighborhood, village</td></tr>
+      <tr><td class="kr">대로 / 로 / 길</td><td>-daero / -ro / -gil</td><td>Boulevard / road / street</td></tr>
+      <tr><td class="kr">23길 · 23번길</td><td>23-gil · 23beon-gil</td><td>A side street numbered off a main road</td></tr>
+      <tr><td class="kr">101동 202호</td><td>101-dong, 202-ho (or Bldg 101, #202)</td><td>Apartment building 101, unit 202</td></tr>
+      <tr><td class="kr">층 / 지하</td><td>F / B</td><td>Floor / basement</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>Road-name vs. lot-number addresses</h2>
+<p>Since 2014 Korea's official addresses use <strong>road names</strong> (<span class="kr">도로명주소</span>), such as <em>Sejong-daero 209</em>. You will still see the older <strong>lot-number</strong> style (<span class="kr">지번주소</span>), such as <em>Yeoksam-dong 737</em>, on old documents and in everyday speech. This tool handles both, but the road-name address is the one to use on forms.</p>
+
+<h2>Tips for online shopping and forms</h2>
+<ul>
+  <li><strong>Address line 1:</strong> building number and road, e.g. “16 Sillim-ro 23-gil”.</li>
+  <li><strong>Address line 2:</strong> apartment and unit, e.g. “101-dong 202-ho”.</li>
+  <li><strong>City:</strong> the district and city, e.g. “Gwanak-gu, Seoul”. <strong>State/Province:</strong> the province or metropolitan city.</li>
+  <li><strong>Delivery inside Korea:</strong> couriers work best with the Korean address. Give the English one only when a site doesn't accept Hangul.</li>
+</ul>
+<p class="hint">Romanization follows the Revised Romanization of Korean, with hyphens before address units as in the official English addresses. Some well-known names keep traditional spellings (for example Teheran-ro).</p>

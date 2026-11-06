@@ -25,7 +25,7 @@ for (const file of readdirSync('pages').filter((f) => f.endsWith('.html'))) {
     .replaceAll('{{description}}', meta.description)
     .replaceAll('{{url}}', url)
     .replaceAll('{{adsense}}', ADSENSE)
-    .replaceAll('{{script}}', meta.script ? `<script src="/assets/${meta.script}" defer></script>` : '')
+    .replaceAll('{{script}}', [].concat(meta.script || []).map((f) => `<script src="/assets/${f}" defer></script>`).join('\n'))
     .replaceAll('{{jsonld}}', meta.tool
       ? `<script type="application/ld+json">${JSON.stringify({
           '@context': 'https://schema.org', '@type': 'WebApplication', name: meta.tool,

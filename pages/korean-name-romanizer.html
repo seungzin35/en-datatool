@@ -1,0 +1,78 @@
+<!--meta
+{"title": "Korean Name Romanizer – Write a Korean Name in English",
+ "description": "Convert a Korean name in Hangul to English letters using the official Revised Romanization, plus the common passport spelling of the family name (Kim, Lee, Park).",
+ "tool": "Korean Name Romanizer",
+ "script": ["romanize.js", "name.js"]}
+-->
+<h1>Korean name romanizer</h1>
+<p class="lead">Type a Korean name in Hangul, such as <span class="kr">김민준</span>. You'll get the official romanization and the spelling most people actually use in passports.</p>
+
+<div class="card">
+  <div class="field">
+    <label for="name">Korean name (Hangul)</label>
+    <input id="name" type="text" lang="ko" class="kr" autocomplete="off" value="김민준" placeholder="e.g. 이서연">
+    <div class="hint">Put a space between family name and given name if the family name has two syllables and it isn't detected (e.g. <span class="kr">남궁 민</span>).</div>
+    <div class="chips">
+      <button class="chip kr" type="button" data-name="이서연">이서연</button>
+      <button class="chip kr" type="button" data-name="박지훈">박지훈</button>
+      <button class="chip kr" type="button" data-name="최윤아">최윤아</button>
+      <button class="chip kr" type="button" data-name="정한별">정한별</button>
+      <button class="chip kr" type="button" data-name="남궁민수">남궁민수</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="field">
+      <label for="order">Name order</label>
+      <select id="order">
+        <option value="korean" selected>Family name first (Kim Minjun)</option>
+        <option value="western">Given name first (Minjun Kim)</option>
+      </select>
+    </div>
+    <div class="field">
+      <label class="check" style="margin-top:28px"><input type="checkbox" id="hyphen"> Hyphen between given-name syllables (Min-jun)</label>
+    </div>
+  </div>
+  <div class="result" aria-live="polite">
+    <div class="sub">Official Revised Romanization</div>
+    <div class="big" id="rr">—</div>
+    <div class="sub" style="margin-top:10px">Common spelling (as often seen in passports)</div>
+    <div class="big" id="common" style="font-size:1.3rem">—</div>
+    <div class="sub" id="other"></div>
+    <div class="sub kr" id="parts" style="margin-top:8px"></div>
+  </div>
+</div>
+
+<h2>How Korean names are romanized</h2>
+<p>Korea's official system is the <strong>Revised Romanization of Korean</strong> (2000). For personal names it has three simple rules:</p>
+<ul>
+  <li>The family name comes first and is written separately: <span class="kr">한복남</span> → <strong>Han Boknam</strong>.</li>
+  <li>The given name is written as one word. A hyphen between syllables is allowed: <strong>Han Bok-nam</strong>.</li>
+  <li>Sound changes between the syllables of a given name are <em>not</em> written. <span class="kr">복남</span> sounds like “bong-nam” but is written <strong>Boknam</strong>.</li>
+</ul>
+
+<h2>Why family names look different</h2>
+<p>Family names are the big exception. Long before the official system, people chose their own spellings, and those stuck. Under the official rules <span class="kr">김</span> is “Gim”, <span class="kr">이</span> is “I” and <span class="kr">박</span> is “Bak”, but almost everyone writes <strong>Kim</strong>, <strong>Lee</strong> and <strong>Park</strong>. Both are correct; what matters is using one spelling consistently.</p>
+
+<div class="card table-wrap">
+  <table>
+    <thead><tr><th>Hangul</th><th>Official</th><th>Most common</th><th>Also seen</th></tr></thead>
+    <tbody>
+      <tr><td class="kr">김</td><td>Gim</td><td>Kim</td><td></td></tr>
+      <tr><td class="kr">이</td><td>I</td><td>Lee</td><td>Yi, Rhee</td></tr>
+      <tr><td class="kr">박</td><td>Bak</td><td>Park</td><td>Pak</td></tr>
+      <tr><td class="kr">최</td><td>Choe</td><td>Choi</td><td></td></tr>
+      <tr><td class="kr">정</td><td>Jeong</td><td>Jung</td><td>Chung</td></tr>
+      <tr><td class="kr">강</td><td>Gang</td><td>Kang</td><td></td></tr>
+      <tr><td class="kr">조</td><td>Jo</td><td>Cho</td><td></td></tr>
+      <tr><td class="kr">윤</td><td>Yun</td><td>Yoon</td><td></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>Passports, visas and bank accounts</h2>
+<ul>
+  <li>The English name in a Korean passport is chosen when the first passport is issued, and it is <strong>hard to change later</strong>. Keep the same spelling on flight tickets, visas, bank accounts and diplomas.</li>
+  <li>If you are filling in a form for a Korean friend or colleague, ask how their name is written in their passport instead of guessing.</li>
+  <li>For your own non-Korean name in Korea, use the spelling exactly as it appears on your passport or Alien Registration Card.</li>
+</ul>
+<p class="hint">This tool follows the Revised Romanization rules of the National Institute of Korean Language. The “common spelling” column reflects everyday usage and is not an official list.</p>

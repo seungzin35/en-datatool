@@ -1,0 +1,75 @@
+<!--meta
+{"title": "Korean Size Chart – Clothing and Shoe Sizes vs US, UK, EU",
+ "description": "Korean clothing and shoe size conversion chart. Convert Korean shoe sizes in mm and clothing sizes like 55, 66, 95 and 100 to US, UK and EU sizes.",
+ "tool": "Korean Size Chart",
+ "script": "sizes.js"}
+-->
+<h1>Korean size chart: clothes and shoes</h1>
+<p class="lead">Korean shops use millimeters for shoes and numbers like <strong>95</strong>, <strong>100</strong> or <strong>55</strong> for clothes. Convert them to the sizes you know.</p>
+
+<div class="card">
+  <h2 style="margin-top:0">Shoe size converter</h2>
+  <div class="row">
+    <div class="field">
+      <label for="gender">Shoes for</label>
+      <select id="gender"><option value="women">Women</option><option value="men" selected>Men</option></select>
+    </div>
+    <div class="field">
+      <label for="system">I know my size in</label>
+      <select id="system"><option value="us" selected>US</option><option value="uk">UK</option><option value="eu">EU</option><option value="kr">Korea (mm)</option></select>
+    </div>
+    <div class="field">
+      <label for="size">Size</label>
+      <select id="size"></select>
+    </div>
+  </div>
+  <div class="result" aria-live="polite"><div class="big" id="shoe-out" style="font-size:1.3rem">—</div></div>
+  <div class="table-wrap" style="margin-top:12px">
+    <table>
+      <thead><tr><th class="num">Korea (mm)</th><th class="num">US</th><th class="num">UK</th><th class="num">EU</th></tr></thead>
+      <tbody id="shoe-table"></tbody>
+    </table>
+  </div>
+  <p class="hint">Korean shoe sizes are your foot length in millimeters, in steps of 5 mm. Not sure? Measure your foot from heel to longest toe and round up to the next 5 mm.</p>
+</div>
+
+<h2>Women's clothing sizes</h2>
+<p>Women's clothes in Korea use two systems. Older and department-store labels use <strong>44 / 55 / 66 / 77 / 88</strong>; newer labels use the bust size in cm, <strong>85 / 90 / 95 / 100 / 105</strong>.</p>
+<div class="card table-wrap">
+  <table>
+    <thead><tr><th>Korea</th><th>Korea (cm)</th><th>International</th><th class="num">US</th><th class="num">UK</th><th class="num">EU</th></tr></thead>
+    <tbody>
+      <tr><td>44</td><td>85</td><td>XS</td><td class="num">0–2</td><td class="num">4–6</td><td class="num">32–34</td></tr>
+      <tr><td>55</td><td>90</td><td>S</td><td class="num">4</td><td class="num">8</td><td class="num">36</td></tr>
+      <tr><td>66</td><td>95</td><td>M</td><td class="num">6–8</td><td class="num">10–12</td><td class="num">38–40</td></tr>
+      <tr><td>77</td><td>100</td><td>L</td><td class="num">10–12</td><td class="num">14–16</td><td class="num">42–44</td></tr>
+      <tr><td>88</td><td>105</td><td>XL</td><td class="num">14</td><td class="num">18</td><td class="num">46</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>Men's clothing sizes</h2>
+<p>Men's tops are labeled by chest size in cm. Many Korean brands run about one size smaller than US brands, so if you are between sizes, go up.</p>
+<div class="card table-wrap">
+  <table>
+    <thead><tr><th>Korea</th><th>International</th><th>Chest (cm)</th><th class="num">US / UK chest (in)</th></tr></thead>
+    <tbody>
+      <tr><td>90</td><td>S</td><td>88–92</td><td class="num">34–36</td></tr>
+      <tr><td>95</td><td>M</td><td>93–97</td><td class="num">37–38</td></tr>
+      <tr><td>100</td><td>L</td><td>98–102</td><td class="num">39–40</td></tr>
+      <tr><td>105</td><td>XL</td><td>103–107</td><td class="num">41–42</td></tr>
+      <tr><td>110</td><td>XXL</td><td>108–112</td><td class="num">43–44</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>Pants and jeans</h2>
+<p>Pants are usually sized by waist in <strong>inches</strong> (28, 30, 32…), the same as in the US, or sometimes in cm (e.g. 76 = about 30 in). To convert: <strong>inches × 2.54 = cm</strong>. Free-size (<span class="kr">프리사이즈</span>, “FREE”) items usually fit Korean sizes 55–66 for women or 95–100 for men.</p>
+
+<h2>Shopping tips</h2>
+<ul>
+  <li>Online shops list the garment's real measurements (<span class="kr">실측 사이즈</span>) in cm: chest width (<span class="kr">가슴단면</span>), length (<span class="kr">총장</span>), sleeve (<span class="kr">소매길이</span>). Measure a shirt you own and compare. Note that “chest width” is half the chest, measured flat.</li>
+  <li>Exchanges and returns (<span class="kr">교환·반품</span>) on Korean shopping sites often cost a shipping fee of a few thousand won, so it pays to check measurements first.</li>
+  <li>Shoe brands differ by up to half a size. If a store lets you, try both your usual size and 5 mm up.</li>
+</ul>
+<p class="hint">Sizes are typical values from common brand charts and can vary by brand and cut.</p>
