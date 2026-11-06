@@ -31,7 +31,7 @@ h3 { font-size: 1.05rem; margin: 20px 0 6px; }
 .grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
 .tool-card { display: block; text-decoration: none; color: var(--ink); background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 18px; transition: border-color .15s, transform .15s; }
 .tool-card:hover { border-color: var(--brand); transform: translateY(-2px); }
-.tool-card h2 { margin: 6px 0 4px; font-size: 1.1rem; }
+.tool-card h2, .tool-card h3 { margin: 6px 0 4px; font-size: 1.1rem; }
 .tool-card p { margin: 0; color: var(--muted); font-size: 15px; }
 .tag { display: inline-block; font-size: 12px; font-weight: 600; color: var(--brand); background: var(--soft); padding: 2px 8px; border-radius: 99px; }
 .tag.soon { color: var(--muted); }

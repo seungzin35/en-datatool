@@ -40,3 +40,25 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+  # Tell Bing and other IndexNow search engines that pages changed (Google ignores IndexNow; use Search Console for Google).
+  indexnow:
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Ping IndexNow
+        continue-on-error: true
+        run: |
+          node build.mjs
+          node -e '
+            const fs = require("fs");
+            const key = fs.readdirSync("public").find((f) => /^[0-9a-f]{32}\.txt$/.test(f)).slice(0, 32);
+            const urls = [...fs.readFileSync("dist/sitemap.xml", "utf8").matchAll(/<loc>(.*?)<\/loc>/g)].map((m) => m[1]);
+            fs.writeFileSync("indexnow.json", JSON.stringify({ host: "en-datatool.zinnote.kr", key,
+              keyLocation: `https://en-datatool.zinnote.kr/${key}.txt`, urlList: urls }));'
+          curl -sS -o /dev/null -w "IndexNow HTTP %{http_code}\n" -X POST https://api.indexnow.org/indexnow \
+            -H "Content-Type: application/json; charset=utf-8" --data @indexnow.json
