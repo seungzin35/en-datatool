@@ -62,3 +62,8 @@ tr.total td { font-weight: 800; border-top: 2px solid var(--ink); }
 .kr { font-family: "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", sans-serif; }
 .site-footer { border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; padding: 20px 0 32px; }
 .site-footer p { margin: 4px 0; }
+.steps { padding-left: 22px; }
+.steps li { margin-bottom: 6px; }
+.faq details { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 10px 14px; margin-bottom: 8px; }
+.faq summary { font-weight: 600; cursor: pointer; }
+.faq details p { margin: 8px 0 2px; color: var(--muted); }

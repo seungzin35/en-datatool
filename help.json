@@ -1,0 +1,41 @@
+{
+"man-eok-converter": {
+ "howto": ["Type a Korean amount in the first box, for example 3억 5천만, 50만 or 350000000. You can also tap one of the quick buttons.", "Read the result: the number in digits, in English words, and written the Korean way.", "To work in dollars, type in the US dollars box. The exchange rate loads automatically, and you can change it to the rate your bank gives you."],
+ "faq": [["How much is 1억 won?", "1억 (eok) is 100,000,000 won, one hundred million won."],
+         ["What does 50만 원 mean?", "50만 is 50 × 10,000 = 500,000 won (five hundred thousand won)."],
+         ["What does 2억 5천 mean in a jeonse listing?", "It is shorthand for 2억 5천만 원, which is 250,000,000 won. The converter reads it that way automatically."],
+         ["Is the dollar amount exact?", "No. It uses a public reference rate. Banks and card companies add a margin, so your real amount will differ slightly."]]
+},
+"pyeong-to-square-meters": {
+ "howto": ["Type a size in any of the three boxes: pyeong, square meters or square feet.", "The other two boxes update instantly, and the summary shows all three together.", "Use the quick buttons to check common Korean apartment sizes such as 25 pyeong or 84 m²."],
+ "faq": [["How many square meters is 1 pyeong?", "1 pyeong is exactly 400/121 m², about 3.3058 m² or 35.58 ft²."],
+         ["How big is a 34 pyeong apartment?", "A \"34평\" apartment usually has an exclusive (living) area of about 84 m², about 25.4 pyeong. The 34 refers to supply area, which includes shared spaces."],
+         ["Is pyeong still used in Korea?", "Contracts and official listings must use square meters, but people and real-estate agents still talk in pyeong every day."]]
+},
+"take-home-pay-calculator": {
+ "howto": ["Choose whether your salary is per year (연봉) or per month (월급) and type the gross amount, for example 40,000,000 or 4000만.", "Enter any tax-free allowance, such as a meal allowance, and the number of people you support including yourself.", "Tick the boxes if you don't pay National Pension or Employment Insurance, then read your estimated monthly take-home pay and each deduction below it."],
+ "faq": [["How much is taken out of a Korean salary?", "For most employees about 9–10% goes to the four social insurances, plus income tax and local income tax. In total, roughly 10–20% of gross pay depending on salary."],
+         ["Why is my payslip slightly different?", "Employers withhold income tax with the National Tax Service's simplified table, and your real insurance base may differ from your contract salary. Differences in tax are settled in the year-end tax settlement."],
+         ["Do foreigners pay National Pension?", "Usually yes, but it depends on your nationality and visa. Some people are exempt, and some can claim a lump-sum refund when they leave Korea."],
+         ["What is a tax-free allowance?", "Some allowances, such as a meal allowance of up to ₩200,000 a month, are not taxed and are not counted for insurance. Check your payslip for 비과세 items."]]
+},
+"korean-address-in-english": {
+ "howto": ["Copy your Korean address (for example from a delivery app, your lease or 정부24) and paste it into the box.", "Check the English address that appears. It is written from the smallest unit to the biggest, like a Western address.", "Tap Copy and paste it into the form. If the building has an official English name, replace the spelled-out name with it."],
+ "faq": [["Do I write \"dong\" and \"ho\" in English?", "Yes. 101동 202호 can be written \"101-dong, 202-ho\" or \"Bldg 101, #202\". Both are understood."],
+         ["Should I use the road-name or lot-number address?", "Use the road-name address (도로명주소), such as Sejong-daero 209. It is the official system since 2014."],
+         ["Will a parcel from abroad arrive with this address?", "Usually yes, especially with the 5-digit postal code. Couriers inside Korea work best with the Korean address, so add it too if the form allows."],
+         ["Where can I find the official English address?", "Search your address on juso.go.kr (Korea Address Information), which shows the official English version."]]
+},
+"korean-size-chart": {
+ "howto": ["Choose men's or women's shoes and the size system you already know: US, UK, EU or Korean mm.", "Pick your size. The result shows the matching Korean size in millimeters and the other systems.", "For clothes, find your usual size in the women's or men's tables below and read the Korean size across the row."],
+ "faq": [["What is size 270 in Korean shoes?", "270 mm is about men's US 9, UK 8, EU 42.5, or women's US 10."],
+         ["What is a Korean size 55 or 66?", "For women, 55 is about a small (US 4) and 66 about a medium (US 6–8)."],
+         ["Are Korean clothes smaller?", "Many Korean brands run about one size smaller than US brands, so go up a size if you are between sizes."]]
+},
+"korean-name-romanizer": {
+ "howto": ["Type a Korean name in Hangul, for example 김민준. Put a space after a two-syllable family name if it isn't detected.", "Choose the name order and whether you want a hyphen between the given-name syllables.", "Read both versions: the official Revised Romanization and the common passport spelling of the family name."],
+ "faq": [["Why is 이 written \"Lee\" and not \"I\"?", "Official romanization gives \"I\", but \"Lee\" was in use long before the current system and is still the most common spelling."],
+         ["Can I write Min-jun or Minjun?", "Both are allowed. The official rule writes the given name as one word, and a hyphen between syllables is optional."],
+         ["Which spelling should I use on official documents?", "Use exactly the spelling in the person's passport. A Korean passport name is hard to change once issued."]]
+}
+}
