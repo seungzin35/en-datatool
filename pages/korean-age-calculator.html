@@ -1,0 +1,48 @@
+<!--meta
+{"title": "Korean Age Calculator – International Age, Korean Age and Year Age",
+ "description": "Find your Korean age, international age (만 나이) and year age (연 나이) from your birth date. See your Korean zodiac animal and the rules Korea uses since 2023.",
+ "tool": "Korean Age Calculator",
+ "script": "age.js"}
+-->
+<h1>Korean age calculator</h1>
+<p class="lead">Enter your birth date to see the three ways age is counted in Korea, and which one is used where.</p>
+
+<div class="card">
+  <div class="row">
+    <div class="field">
+      <label for="birth">Birth date</label>
+      <input id="birth" type="date" value="2000-06-15" min="1900-01-01">
+    </div>
+    <div class="field">
+      <label for="on">Age on (default: today)</label>
+      <input id="on" type="date">
+    </div>
+  </div>
+  <div class="result" aria-live="polite">
+    <div class="row">
+      <div><div class="sub">International age (<span class="kr">만 나이</span>)</div><div class="big" id="intl">—</div></div>
+      <div><div class="sub">Korean age (<span class="kr">세는 나이</span>)</div><div class="big" id="korean">—</div></div>
+      <div><div class="sub">Year age (<span class="kr">연 나이</span>)</div><div class="big" id="year">—</div></div>
+    </div>
+    <p class="sub" id="extra" style="margin-bottom:0"></p>
+  </div>
+</div>
+
+{{howto}}
+<h2>Three ways to count age in Korea</h2>
+<div class="card table-wrap"><table>
+<thead><tr><th>Name</th><th>How it's counted</th><th>Where it's used</th></tr></thead>
+<tbody>
+<tr><td><strong>International age</strong><br><span class="kr">만 나이</span></td><td>Starts at 0 and goes up on your birthday, like most countries.</td><td>The official standard for laws, contracts and government services since June 28, 2023.</td></tr>
+<tr><td><strong>Korean age</strong><br><span class="kr">세는 나이</span></td><td>You are 1 at birth and everyone gets a year older on January 1.</td><td>Traditional, still heard in casual conversation, especially among older people.</td></tr>
+<tr><td><strong>Year age</strong><br><span class="kr">연 나이</span></td><td>Current year minus birth year. Everyone born in the same year has the same age all year.</td><td>Some laws still use it, such as the youth protection rules for buying alcohol and tobacco, and military service.</td></tr>
+</tbody></table></div>
+
+<h2>What changed in 2023?</h2>
+<p>On June 28, 2023, Korea made international age the standard for legal and administrative purposes. Before that, many people gave their “Korean age” in daily life, which is one or two years older than international age. You will still hear Korean age sometimes, and some rules that are written in year age kept it.</p>
+
+<h2>Drinking and smoking age in Korea</h2>
+<p>You can legally buy alcohol and tobacco from <strong>January 1 of the year you turn 19</strong> in international age, because the youth protection rules use year age. For example, anyone born in 2008 can buy alcohol from January 1, 2027. Shops and bars may ask for ID.</p>
+
+<h2>Your zodiac animal (<span class="kr">띠</span>)</h2>
+<p>Koreans often ask “what animal are you?” (<span class="kr">무슨 띠예요?</span>) as a polite way to ask your birth year. The animals follow a 12-year cycle: Rat, Ox, Tiger, Rabbit, Dragon, Snake, Horse, Sheep, Monkey, Rooster, Dog, Pig. Strictly the year changes at Lunar New Year, so if you were born in January or early February you may belong to the previous animal; in everyday conversation most people simply go by the calendar year.</p>

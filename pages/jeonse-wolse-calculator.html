@@ -1,0 +1,43 @@
+<!--meta
+{"title": "Jeonse to Wolse Calculator – Convert Korean Deposit and Monthly Rent",
+ "description": "Convert a Korean jeonse (lump-sum deposit) into monthly rent (wolse) and back, using a conversion rate. Compare rental offers in English.",
+ "tool": "Jeonse to Wolse Calculator",
+ "script": "jeonse.js"}
+-->
+<h1>Jeonse ↔ wolse calculator</h1>
+<p class="lead">Landlords in Korea often let you trade a smaller deposit for higher monthly rent. Convert between <strong>jeonse</strong> (one big deposit) and <strong>wolse</strong> (deposit + monthly rent) to compare offers.</p>
+
+<div class="card">
+  <h2 style="margin-top:0">1. Jeonse → monthly rent</h2>
+  <div class="row">
+    <div class="field"><label for="j">Jeonse deposit (won)</label><input id="j" type="text" inputmode="numeric" value="2억"><div class="hint">You can type 2억 or 200,000,000.</div></div>
+    <div class="field"><label for="d">Deposit you want to pay (won)</label><input id="d" type="text" inputmode="numeric" value="5000만"></div>
+    <div class="field"><label for="r">Conversion rate (% per year)</label><input id="r" type="number" step="0.1" min="0" value="5"></div>
+  </div>
+  <div class="result" aria-live="polite"><div class="sub">Equivalent monthly rent</div><div class="big" id="out1">—</div><div class="sub" id="out1s"></div></div>
+</div>
+
+<div class="card">
+  <h2 style="margin-top:0">2. Wolse → equivalent jeonse</h2>
+  <div class="row">
+    <div class="field"><label for="d2">Deposit (won)</label><input id="d2" type="text" inputmode="numeric" value="1000만"></div>
+    <div class="field"><label for="m2r">Monthly rent (won)</label><input id="m2r" type="text" inputmode="numeric" value="60만"></div>
+    <div class="field"><label for="r2">Conversion rate (% per year)</label><input id="r2" type="number" step="0.1" min="0" value="5"></div>
+  </div>
+  <div class="result" aria-live="polite"><div class="sub">Equivalent jeonse deposit</div><div class="big" id="out2">—</div><div class="sub" id="out2s"></div></div>
+</div>
+
+{{howto}}
+<h2>How the conversion works</h2>
+<div class="example">Monthly rent = (jeonse deposit − new deposit) × conversion rate ÷ 12
+Jeonse equivalent = deposit + monthly rent × 12 ÷ conversion rate</div>
+<p>The <strong>conversion rate</strong> (<span class="kr">전월세 전환율</span>) is the yearly interest the landlord expects on the deposit they no longer hold. A higher rate means higher monthly rent for the same reduction in deposit.</p>
+
+<h2>Which rate should I use?</h2>
+<ul>
+  <li><strong>Market rate:</strong> what landlords in the area actually ask. Compare two listings for similar homes, one jeonse and one wolse, to estimate it. The calculator's 5% is only a starting example.</li>
+  <li><strong>Legal cap during a contract:</strong> when an existing jeonse is converted to wolse during the contract or on renewal, the Housing Lease Protection Act caps the rate at the Bank of Korea base rate <strong>plus 2 percentage points</strong>. New contracts are negotiated freely.</li>
+</ul>
+
+<h2>Jeonse or wolse: which is better for you?</h2>
+<p>Compare the monthly rent with what the deposit money would cost you otherwise. If you would borrow the deposit at 4% a year, a ₩100,000,000 deposit costs about ₩333,000 a month in interest. If the landlord asks more than that in rent instead, jeonse is cheaper, but you carry the risk of getting a big deposit back. Read <a href="/guides/how-to-read-korean-rent-listings/">how to read Korean rent listings</a> for the safety checks.</p>

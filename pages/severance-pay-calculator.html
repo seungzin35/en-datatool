@@ -1,0 +1,70 @@
+<!--meta
+{"title": "Korea Severance Pay Calculator (퇴직금) for Foreign Workers",
+ "description": "Estimate your Korean severance pay (퇴직금) from your start date, last working day and recent wages. English explanation of the 1-year rule, average wage and payment deadline.",
+ "tool": "Korea Severance Pay Calculator",
+ "script": "severance.js"}
+-->
+<h1>Korea severance pay calculator (퇴직금)</h1>
+<p class="lead">If you worked at least one year in Korea, your employer must pay severance when you leave. Estimate the amount before tax here.</p>
+
+<div class="card">
+  <div class="row">
+    <div class="field">
+      <label for="start">First day of work</label>
+      <input id="start" type="date" value="2024-03-01">
+    </div>
+    <div class="field">
+      <label for="end">Last day of work</label>
+      <input id="end" type="date" value="2026-10-31">
+    </div>
+  </div>
+  <div class="row">
+    <div class="field">
+      <label for="pay3">Total pay in the last 3 months (won)</label>
+      <input id="pay3" type="text" inputmode="numeric" value="9,000,000">
+      <div class="hint">Gross pay before deductions, including overtime and allowances. Monthly pay × 3 if it was always the same.</div>
+    </div>
+    <div class="field">
+      <label for="bonus">Bonuses paid in the last 12 months (won)</label>
+      <input id="bonus" type="text" inputmode="numeric" value="0">
+      <div class="hint">Regular annual bonuses. 3/12 of this is added.</div>
+    </div>
+  </div>
+  <div class="field">
+    <label for="leave">Pay for unused annual leave in the last 12 months (won)</label>
+    <input id="leave" type="text" inputmode="numeric" value="0">
+    <div class="hint">Leave allowance (<span class="kr">연차수당</span>) paid in the year before you left. 3/12 of this is added.</div>
+  </div>
+  <div class="result" aria-live="polite">
+    <div class="sub">Estimated severance pay (before tax)</div>
+    <div class="big" id="sev">—</div>
+    <div class="sub" id="sev-detail"></div>
+  </div>
+</div>
+
+<div class="note">Severance is taxed separately as retirement income (<span class="kr">퇴직소득세</span>), usually a small share at short service periods. If your average wage turns out lower than your ordinary wage, the ordinary wage is used instead. Ask your employer for the official calculation.</div>
+
+{{howto}}
+<h2>Who gets severance pay in Korea?</h2>
+<p>Under the Employee Retirement Benefit Security Act, an employee gets severance pay if they:</p>
+<ul>
+  <li>worked for the same employer for <strong>at least one year</strong> (365 days), and</li>
+  <li>worked on average <strong>15 hours or more a week</strong>.</li>
+</ul>
+<p>This applies to foreign workers as well, including part-time workers who meet both conditions. Your visa type and nationality don't matter.</p>
+
+<h2>How severance is calculated</h2>
+<div class="example">Average daily wage = (pay in the last 3 months + 3/12 of bonuses + 3/12 of leave pay)
+                     ÷ number of calendar days in those 3 months
+
+Severance = average daily wage × 30 × (days employed ÷ 365)</div>
+<p>In short: about <strong>one month's average pay for every year worked</strong>, counted to the day. Two and a half years of work gives about two and a half months' pay.</p>
+
+<h2>When must it be paid?</h2>
+<p>Your employer must pay severance <strong>within 14 days</strong> of your last day, unless you both agree to extend that. In many cases it is paid into an IRP retirement account (<span class="kr">개인형 퇴직연금</span>) in your name rather than your normal bank account, and you can then cancel the IRP to receive the money. If you are leaving Korea, tell your employer early and ask how it will be paid.</p>
+
+<h2>Workers on E-9 and H-2 visas</h2>
+<p>Employers of E-9 (non-professional employment) and H-2 (working visit) workers usually pay part of severance through <strong>departure guarantee insurance</strong> (<span class="kr">출국만기보험</span>), which you claim when you leave Korea. If the insurance pays less than your legal severance, the employer owes the difference.</p>
+
+<h2>If your employer doesn't pay</h2>
+<p>You can file a complaint with the Ministry of Employment and Labor (call <strong>1350</strong>, with interpretation available). Keep your contract, payslips and bank records.</p>

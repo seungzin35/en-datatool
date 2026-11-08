@@ -13,6 +13,11 @@ const TOOLS = [
   ['korean-address-in-english', 'Korean address in English', 'Hangul address to English order and spelling.'],
   ['korean-size-chart', 'Clothing & shoe sizes', 'Korean sizes vs US, UK and EU.'],
   ['korean-name-romanizer', 'Korean name romanizer', 'Korean names in English letters.'],
+  ['korean-age-calculator', 'Korean age calculator', 'International age, Korean age and year age.'],
+  ['severance-pay-calculator', 'Severance pay calculator', 'Estimate your 퇴직금 when you leave a job.'],
+  ['korea-public-holidays-2027', 'Korea public holidays 2027', 'Every holiday and long weekend in 2027.'],
+  ['jeonse-wolse-calculator', 'Jeonse ↔ wolse calculator', 'Convert a lump-sum deposit into monthly rent.'],
+  ['korean-units-converter', 'Korean units converter', 'Geun, don, ja and doe to metric.'],
 ];
 const layout = readFileSync('layout.html', 'utf8');
 const help = JSON.parse(readFileSync('help.json', 'utf8'));
@@ -34,7 +39,7 @@ const guides = existsSync('pages/guides')
       return { slug: f.replace(/\.html$/, ''), meta, body };
     }).sort((a, b) => b.meta.date.localeCompare(a.meta.date) || a.slug.localeCompare(b.slug))
   : [];
-const guideFor = (toolSlug) => guides.find((g) => g.meta.tool === toolSlug);
+const guidesFor = (toolSlug) => guides.filter((g) => g.meta.tool === toolSlug);
 const guideCards = (list) => `<div class="grid">${list.map((g) =>
   `<a class="tool-card" href="/guides/${g.slug}/"><span class="tag">Guide</span><h3>${esc(g.meta.headline)}</h3><p>${esc(g.meta.description)}</p></a>`).join('')}</div>`;
 
@@ -88,8 +93,8 @@ for (const file of readdirSync('pages').filter((f) => f.endsWith('.html'))) {
       mainEntity: h.faq.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) });
   }
   if (meta.tool) {
-    const g = guideFor(key);
-    if (g) body += `\n<h2>Read the guide</h2>\n${guideCards([g])}\n`;
+    const gs = guidesFor(key);
+    if (gs.length) body += `\n<h2>Read the guide${gs.length > 1 ? 's' : ''}</h2>\n${guideCards(gs)}\n`;
     const others = TOOLS.filter(([s]) => s !== key);
     body += `\n<h2>More free tools for life in Korea</h2>\n<div class="grid">${others.map(([s, n, d]) =>
       `<a class="tool-card" href="/${s}/"><h3>${n}</h3><p>${d}</p></a>`).join('')}</div>\n`;
