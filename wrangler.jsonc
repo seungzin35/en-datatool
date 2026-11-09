@@ -1,0 +1,11 @@
+// Cloudflare Workers configuration. The site is fully static: `node build.mjs`
+// writes dist/, and the Worker only serves that folder as assets.
+// Docs: https://developers.cloudflare.com/workers/static-assets/
+{
+  "name": "en-datatool",
+  "compatibility_date": "2026-09-01",
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "404-page",
+  },
+}
